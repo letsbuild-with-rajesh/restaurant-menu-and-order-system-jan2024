@@ -6,7 +6,7 @@ const { typeDefs } = require('./schema')
 
 const config = require('config');
 const PORT = config.get('PORT');
-const DATABASE_URI = config.get('DATABASE_URI');
+const DATABASE_URI = config.get('DATABASE_URI'); // "mongodb://localhost:40000/restaurant"
 
 (async () => {
 	const server = new ApolloServer({ typeDefs, resolvers });
