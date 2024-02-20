@@ -46,8 +46,15 @@ export default function Customer() {
 
 	const placeOrder = () => {
 		var name = prompt("Please enter your name to place the order");
+		if (name == null) {
+			return; // prompt is cancelled
+		}
+		if (Object.keys(order).length === 0) {
+			alert('Please add atleast one item to the order!');
+			return;
+		}
 		if (!name || !name.match(/^[a-zA-Z]+$/)) {
-			alert('Placing order failed! Please provide a valid name');
+			alert('Please provide a valid name');
 			return;
 		}
 		const payload = {
